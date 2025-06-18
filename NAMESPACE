@@ -2,5 +2,7 @@ import(ReadPDF)
 import(XML)
 
 export(sourceFuns)
-export(getRCodePDF)
+export(getRCodePDF, getRCodeHTML)
+
+export(funs)
 
