@@ -1,6 +1,6 @@
 library(ReadPDF)
 
-getRCode = 
+getRCodePDF = 
 function(doc, fill.color = guessRFillColor(doc))
 {
     if(is.character(doc))
