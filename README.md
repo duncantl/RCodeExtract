@@ -62,6 +62,10 @@ e$fun()
 ```
 
 
-###  `getRCodePDF()`
+###  `getRCodePDF()` & `getRCodeHTML()`
 
+These extract the R code from an PDF and HTML document, respectively,
+and return it as text (or lists of text for PDF).
+
+These are intended to work with documents generated via Rmarkdown.
 
