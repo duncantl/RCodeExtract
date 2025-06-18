@@ -8,6 +8,8 @@ function(file, env = globalenv())
            r = ,
            R = sourceFunsR(file, env),
            Rmd = sourceFunsRmd(file, env),
+           xml = ,
+           pdf = sourceFunsPDF(file, env),
            stop("unhandled extension ", ex))
 }
 
@@ -29,21 +31,30 @@ function(file, env = globalenv())
 
 
 library(XML)
+
+getRCodeHTML =
+function(file)
+{    
+    doc = htmlParse(file)
+    p = getNodeSet(doc, "//pre[@class = 'r']")
+    sapply(p, xmlValue)
+}
+
+
 sourceFunsHTML =
 function(file, env = globalenv())    
 {
-    doc = htmlParse(file)
-    p = getNodeSet(doc, "//pre[@class = 'r']")
-    txt = sapply(p, xmlValue)
+    txt = getRCodeHTML(file)
     code = parse(text = paste(txt, collapse = "\n\n"))
-    
     sourceFunsR(code, env)
 }
 
 sourceFunsPDF =
 function(doc, env = globalenv())
 {
-    
+    txt = getRCodePDF(doc)
+    code = parse(text = paste(unlist(txt), collapse = "\n\n"))    
+    sourceFunsR(code, env)
 }
 
 
