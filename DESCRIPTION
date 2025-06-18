@@ -1,0 +1,11 @@
+Package: RCodeExtract
+Title: Extract R Code from Documents
+Description: This provides functions to both extract and
+  load  R code and functions from R, Rmarkdown, PDF and HTML
+  documents. I use this when grading assignments
+  and wanting to run the code directly.
+Imports: XML, ReadPDF
+Author: Duncan Temple Lang
+Maintainer: Duncan Temple Lang <dtemplelang@ucdavis.edu>
+Version: 0.1-0
+

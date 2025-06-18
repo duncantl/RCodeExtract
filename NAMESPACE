@@ -1,0 +1,6 @@
+import(ReadPDF)
+import(XML)
+
+export(sourceFuns)
+export(getRCodePDF)
+
